@@ -1,0 +1,591 @@
+/* ================ VARIABLES MODERNAS ================ */
+:root {
+    /* Paleta de colores profesional */
+    --primary-dark: #1A2330;
+    --primary-light: #2A3950;
+    --accent-gold: #C5A47E;
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
+    --bg-light: #F5F5F5;
+    --section-divider: #D9D9D9;
+    
+    /* Efectos */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-nav: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ================ BASE ESTILIZADA ================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* ================ NAVBAR PROFESIONAL ================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-nav);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    background: var(--primary-dark);
+}
+.navbar.scrolled .logo  {
+    color: var(--text-light); /* Cambia el color del span a blanco */
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.logo span {
+    color: var(--accent-gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+}
+
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gold);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar.scrolled .nav-link {
+    color: var(--text-light);
+}
+
+/* ================ HERO SECTION IMPACTANTE ================ */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(26, 35, 48, 0.9), rgba(26, 35, 48, 0.5)),
+                url('../img/fondo-abogado.png') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    color: var(--text-light);
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    background: var(--accent-gold);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    background: transparent;
+    border-color: var(--accent-gold);
+    transform: translateY(-3px);
+}
+
+/* ================ SECCION SOBRE MÍ ================ */
+.about-section {
+    padding: 6rem 2rem;
+    background: var(--text-light);
+    text-align: center;
+    position: relative;
+}
+
+.about-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    max-width: 100%; /* Ajusta el ancho máximo */
+    height: auto; /* Altura automática para mantener la proporción */
+    border-radius: 10px;
+    box-shadow: var(--shadow-card);
+    object-fit: contain; /* Asegura que la imagen no se corte */
+    margin-top: 3rem;
+}
+
+.about-content {
+    padding-left: 2rem;
+}
+.about-text {
+    
+    text-align: justify;
+}
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 600px;
+    height: 3px;
+    background: var(--accent-gold);
+    margin: 1rem auto; /* Centra la línea horizontalmente */ 
+    
+}
+
+.university-logo {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 1.5rem; /* Espacio superior */
+}
+
+.logo-uchile {
+    max-width: 200px; /* Ajusta el tamaño del logo */
+    height: auto;
+    opacity: 0.8; /* Opcional: Suaviza el logo para integrarlo con el diseño */
+    margin-top: 3rem;
+}
+
+/* ================ SERVICIOS DESTACADOS ================ */
+.services-section {
+    padding: 6rem 2rem;
+    background: var(--bg-light);
+    text-align: center;
+    position: relative;
+}
+
+
+.services-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--text-light);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.service-image {
+    width: 100%;
+    border-radius: 10px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.service-list {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+}
+
+.service-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-weight: 700; /* Añade un peso más fuerte para mayor énfasis */
+}
+
+/* ================ FORMULARIO DE CONTACTO ELEGANTE ================ */
+.contact-section {
+    padding: 6rem 2rem;
+    background: var(--text-light);
+    text-align: center;
+    position: relative;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center; /* Centrar el contenido */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+    text-align: left;
+}
+
+.contact-text {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px; /* Reducir el ancho máximo */
+    margin: 0 auto;
+    gap: 3rem;
+    text-align: justify;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 400px; /* Limitar el ancho de la información de contacto */
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 500px; /* Reducir el ancho máximo del formulario */
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-card);
+    margin: 0 auto; /* Centrar el formulario */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    background: var(--primary-dark);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background: var(--accent-gold);
+}
+/* ================ RESPONSIVE DESIGN ================ */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Ocultar por defecto en móviles */
+        position: fixed;
+        text-align: center;
+        top: 70px; /* Ajusta según la altura de tu navbar */
+        right: -100%; /* Ocultar fuera de la pantalla */
+        background: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+        backdrop-filter: blur(10px); /* Efecto de desenfoque */
+        flex-direction: column;
+        width: 100%;
+        padding: 2rem 1rem; /* Más padding */
+        transition: right 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        border-top: 1px solid var(--section-divider); /* Borde superior */
+    }
+
+   /* Cambiar el fondo y color del menú desplegado cuando el navbar está en modo "scrolled" */
+    .navbar.scrolled .nav-links {
+        background: rgba(26, 35, 48, 0.7); /* Fondo oscuro semi-transparente */
+        backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    }
+
+    .navbar.scrolled .nav-link {
+        color: var(--text-light); /* Color de los enlaces en modo "scrolled" */
+    }
+
+    .nav-links.active {
+        display: block;
+        right: 0; /* Mostrar el menú */
+    }
+
+    .nav-links li {
+        margin: 1rem 0; /* Espacio entre elementos */
+    }
+
+    .nav-link {
+        color: var(--primary-dark);
+        font-size: 1.2rem; /* Tamaño de fuente más grande */
+        font-weight: 500;
+        text-decoration: none;
+        padding: 0.5rem 1rem; /* Padding para facilitar el toque */
+        transition: color 0.3s ease, background 0.3s ease;
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    .nav-link:hover {
+        color: var(--accent-gold); /* Cambiar color al hacer hover */
+        background: rgba(197, 164, 126, 0.1); /* Fondo suave al hacer hover */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón en móviles */
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+        color: var(--primary-dark); /* Color del ícono */
+        transition: color 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+        color: var(--accent-gold); /* Cambiar color al hacer hover */
+    }
+
+    /* Ajustes adicionales para otras secciones */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        padding-left: 0;
+    }
+
+    .section-title::after {
+        width: 100%; /* Ajusta el ancho de la línea debajo del título */
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-text {
+        flex-direction: column;
+    }
+
+    .contact-form {
+        margin-top: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-icon {
+        font-size: 2rem;
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .submit-button {
+        padding: 0.8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+}
+
+/* ================ EFECTOS ESPECIALES ================ */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Validación de Formulario */
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.success-message {
+    background: #28a745;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.input-error {
+    border-color: #dc3545 !important;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #25D366;
+    color: white !important;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.05);
+}
+
+/* ========== FOOTER ========== */
+.main-footer {
+    background: #1A2330; /* Color oscuro elegante */
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 1rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.copyright {
+    opacity: 0.8;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .main-footer {
+        font-size: 0.9rem;
+        padding: 1rem 0;
+    }
+}
